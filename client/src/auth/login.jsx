@@ -6,21 +6,27 @@ import heroVideo from '../assest/hero-bg.mp4';
 import './login.css';
 
 export default function Login() {
-  const { login } = useAuth();
+  const { login, register } = useAuth();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('admin@fit.com');
-  const [password, setPassword] = useState('password123');
+  const [isRegister, setIsRegister] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   const submit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await login(email, password);
+      if (isRegister) {
+        await register(name, email, password);
+      } else {
+        await login(email, password);
+      }
       navigate('/');
     } catch (err) {
-      alert(err.response?.data?.message || 'Login failed');
+      alert(err.response?.data?.message || (isRegister ? 'Registration failed' : 'Login failed'));
     } finally {
       setLoading(false);
     }
@@ -44,11 +50,24 @@ export default function Login() {
       <div className="login-form-side">
         <div className="form-container">
           <div className="form-header">
-            <h2>Welcome back</h2>
-            <p>Please enter your details to sign in.</p>
+            <h2>{isRegister ? 'Create Account' : 'Welcome back'}</h2>
+            <p>{isRegister ? 'Enter your details to get started.' : 'Please enter your details to sign in.'}</p>
           </div>
 
           <form onSubmit={submit} className="modern-form">
+            {isRegister && (
+              <div className="input-group">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+            )}
+
             <div className="input-group">
               <label>Email Address</label>
               <input
@@ -71,20 +90,27 @@ export default function Login() {
               />
             </div>
 
-            <div className="form-actions">
-              <div className="remember-me">
-                <input type="checkbox" id="remember" />
-                <label htmlFor="remember">Remember me</label>
+            {!isRegister && (
+              <div className="form-actions">
+                <div className="remember-me">
+                  <input type="checkbox" id="remember" />
+                  <label htmlFor="remember">Remember me</label>
+                </div>
+                <a href="#" className="forgot-password">Forgot password?</a>
               </div>
-              <a href="#" className="forgot-password">Forgot password?</a>
-            </div>
+            )}
 
             <button type="submit" className="btn-black" disabled={loading}>
-              {loading ? 'Signing in...' : 'Sign in'}
+              {loading ? 'Processing...' : (isRegister ? 'Sign Up' : 'Sign in')}
             </button>
 
             <div className="form-footer">
-              <p>Don't have an account? <a href="#">Contact Admin</a></p>
+              <p>
+                {isRegister ? 'Already have an account? ' : "Don't have an account? "}
+                <a href="#" onClick={(e) => { e.preventDefault(); setIsRegister(!isRegister); }}>
+                  {isRegister ? 'Sign in' : 'Sign up'}
+                </a>
+              </p>
             </div>
           </form>
         </div>
