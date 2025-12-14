@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import Login from './auth/Login';
+import Login from './auth/login';
 import HomePage from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Challenges from './pages/Challenges';
