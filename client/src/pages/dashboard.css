@@ -1,0 +1,144 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.dashboard-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.dashboard-welcome {
+  color: #fff;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-welcome strong {
+  color: #fff;
+  background: transparent;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.challenge-card-dash {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.challenge-card-dash:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.challenge-card-dash h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.challenge-card-dash p {
+  margin: 0;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.kudos-list {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kudos-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.kudos-item:last-child {
+  margin-bottom: 0;
+}
+
+.kudos-msg {
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.kudos-meta {
+  font-size: 0.8rem;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.empty-state {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}

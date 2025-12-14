@@ -1,0 +1,146 @@
+/* client/src/components/header.css */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.header-transparent {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.header-solid {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header-transparent .header-logo {
+  color: #ffffff;
+}
+
+.header-solid .header-logo {
+  color: #000000;
+}
+
+.header-nav {
+  display: flex;
+  gap: 32px;
+  flex: 0 1 auto;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.header-transparent .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header-transparent .nav-link:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.header-solid .nav-link {
+  color: #4b5563;
+}
+
+.header-solid .nav-link:hover {
+  color: #000000;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.header-transparent .user-name {
+  color: #ffffff;
+}
+
+.header-solid .user-name {
+  color: #000000;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.header-transparent .logout-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.header-transparent .logout-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.header-solid .logout-btn {
+  background: #000000;
+  color: #ffffff;
+}
+
+.header-solid .logout-btn:hover {
+  opacity: 0.8;
+}
+
+.login-link {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.header-transparent .login-link {
+  background: #ffffff;
+  color: #000000;
+}
+
+.header-solid .login-link {
+  background: #000000;
+  color: #ffffff;
+}
