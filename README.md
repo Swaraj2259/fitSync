@@ -8,7 +8,7 @@ FitSync is a modern, interactive fitness tracking application designed to boost 
 
 | Frontend (Vercel) | Backend (Render) |
 |-------------------|------------------|
-| [**View Live Demo**](INSERT_DEPLOY_LINK_HERE) | [API Status](INSERT_API_LINK_HERE) |
+| [**View Live Demo**](https://fit-sync-one.vercel.app/) | [API Status](https://fitsync-ha6t.onrender.com/) |
 
 ---
 
